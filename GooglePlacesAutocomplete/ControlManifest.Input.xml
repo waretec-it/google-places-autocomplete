@@ -4,6 +4,7 @@
     <external-service-usage enabled="false">
     </external-service-usage>
     <property name="googleapikey" display-name-key="Google Api Key" description-key="Enter a valid Google Api Key" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="placeholder" display-name-key="Placeholder" description-key="Placeholder" of-type="SingleLine.Text" usage="input" required="false" />
     <property name="street" display-name-key="Street" description-key="Street" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="city" display-name-key="City" description-key="City" of-type="SingleLine.Text" usage="bound" required="false" />
     <property name="state" display-name-key="State" description-key="State" of-type="SingleLine.Text" usage="bound" required="false" />

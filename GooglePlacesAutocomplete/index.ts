@@ -14,6 +14,7 @@ export class GooglePlacesAutocomplete implements ComponentFramework.StandardCont
     private state: string;
     private zipcode: string;
     private country: string;
+    private placeholder: string;
 
     /**
      * Empty constructor.
@@ -41,13 +42,16 @@ export class GooglePlacesAutocomplete implements ComponentFramework.StandardCont
         this.state = this._context.parameters.state.raw != null ? this._context.parameters.state.raw : "";
         this.zipcode = this._context.parameters.zipcode.raw != null ? this._context.parameters.zipcode.raw : "";
         this.country = this._context.parameters.country.raw != null ? this._context.parameters.country.raw : "";
+        this.placeholder = this._context.parameters.placeholder.raw != null ? this._context.parameters.placeholder.raw : "";
 
         this._inputElement = document.createElement("input");
         this._inputElement.setAttribute("id", "addressautocomplete");
         this._inputElement.setAttribute("type", "text");
         this._inputElement.value = this.street;
-
         this._inputElement.className = "addressAutocomplete";
+        if (this.placeholder != "") {
+            this._inputElement.setAttribute("placeholder", this.placeholder);
+        }
 
         this._inputElement.addEventListener("blur", () => {
             if (this.street != this._inputElement.value) {
